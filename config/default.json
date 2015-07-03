@@ -1,0 +1,8 @@
+{
+  "port": 5000,
+  "db": {
+    "username": "root",
+    "database": "bitnation-development",
+    "host": "localhost"
+  }  
+}

@@ -4,6 +4,7 @@
   "description": "Build a better future",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "repository": {
@@ -23,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/Emerson/bitnation/issues"
   },
-  "homepage": "https://github.com/Emerson/bitnation#readme"
+  "homepage": "https://github.com/Emerson/bitnation#readme",
+  "dependencies": {
+    "config": "^1.14.0",
+    "express": "^4.13.0",
+    "migrate": "^0.2.1",
+    "pg": "^4.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.3.2",
+    "sequelize-cli": "^1.7.0"
+  }
 }
