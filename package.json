@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha"
+    "test": "mocha ./test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -28,10 +28,12 @@
   "dependencies": {
     "config": "^1.14.0",
     "express": "^4.13.0",
+    "lodash": "^3.10.0",
     "migrate": "^0.2.1",
     "pg": "^4.4.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.3.2",
-    "sequelize-cli": "^1.7.0"
+    "sequelize-cli": "^1.7.0",
+    "sequelize-fixture": "^0.1.4"
   }
 }

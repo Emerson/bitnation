@@ -3,6 +3,12 @@
   "db": {
     "username": "root",
     "database": "bitnation-development",
-    "host": "localhost"
-  }  
+    "host": "localhost",
+    "dialect": "postgres",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
+  }
 }
