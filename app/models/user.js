@@ -4,7 +4,6 @@ function isUnique(value, next) {
     function(user) {
       if(user && self.id !== user.id) {
         throw new Error('Email already taken')
-        // return next('Email already taken')
       }
       return next()
     }).catch(function(err) {
