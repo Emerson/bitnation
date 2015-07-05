@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha ./test/**/*.js"
+    "test": "NODE_ENV=test mocha ./test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Emerson/bitnation#readme",
   "dependencies": {
     "config": "^1.14.0",
+    "database-cleaner": "^0.9.1",
     "express": "^4.13.0",
     "lodash": "^3.10.0",
     "migrate": "^0.2.1",
