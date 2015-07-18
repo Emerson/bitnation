@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Emerson/bitnation#readme",
   "dependencies": {
+    "bluebird": "^2.9.34",
     "config": "^1.14.0",
     "database-cleaner": "^0.9.1",
     "express": "^4.13.0",
@@ -35,6 +36,6 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.3.2",
     "sequelize-cli": "^1.7.0",
-    "sequelize-fixture": "^0.1.4"
+    "sequelize-fixtures": "^0.4.7"
   }
 }

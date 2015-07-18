@@ -1,16 +1,13 @@
 var helper = require(__dirname + '/../test-helper')
 var Models = require(__dirname + '/../../app/models/index')
+var fixturesSetup = require(__dirname + '/../fixtures/setup')
 
 describe('Model - User', function() {
 
   var User = Models.User
 
   before(function(done) {
-    User.sync({force: true}).then(
-      function() {
-        done(null)
-      }
-    )
+    fixturesSetup.resetFixtures([], done)
   })
 
   it('should require an email and name', function(done) {

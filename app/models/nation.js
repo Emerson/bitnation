@@ -27,7 +27,15 @@ function defineNation(sequelize, DataTypes) {
   }
 
   var settings = {
-    tableName: 'users'
+    tableName: 'nations',
+    classMethods: {
+      associate: function(models) {
+        this.hasMany(models.Citizenship, {
+          foreignKey: 'nationId'
+        })
+      }
+    }
+
   }
 
   return sequelize.define('Nation', attributes, settings)

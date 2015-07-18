@@ -34,7 +34,14 @@ function defineUser(sequelize, DataTypes) {
   }
 
   var settings = {
-    tableName: 'users'
+    tableName: 'users',
+    classMethods: {
+      associate: function(models) {
+        this.hasMany(models.Citizenship, {
+          foreignKey: 'userId'
+        })
+      }
+    }
   }
 
   return sequelize.define('User', attributes, settings);
