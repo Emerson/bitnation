@@ -1,4 +1,4 @@
-function isUnique(value, next) {
+function isUniqueEmail(value, next) {
   var self = this
   self.Model.find({where: {email: value}}).then(
     function(user) {
@@ -20,7 +20,7 @@ function defineUser(sequelize, DataTypes) {
       validate: {
         isEmail: true,
         notEmpty: true,
-        isUnique: isUnique
+        isUnique: isUniqueEmail
       }
     },
     name: {
