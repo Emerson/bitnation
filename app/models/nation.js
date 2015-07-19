@@ -11,7 +11,6 @@ function isUniqueName(value, next) {
     })
 }
 
-
 function defineNation(sequelize, DataTypes) {
 
   var attributes = {
@@ -33,9 +32,11 @@ function defineNation(sequelize, DataTypes) {
         this.hasMany(models.Citizenship, {
           foreignKey: 'nationId'
         })
+        this.hasMany(models.Role, {
+          foreignKey: 'nationId'
+        })
       }
     }
-
   }
 
   return sequelize.define('Nation', attributes, settings)

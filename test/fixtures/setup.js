@@ -7,6 +7,8 @@ function setupDb() {
     return Models.Nation.sync({force: true})
   }).then(function() {
     return Models.Citizenship.sync({force: true})
+  }).then(function() {
+    return Models.Role.sync({force: true})
   })
 }
 
