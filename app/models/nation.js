@@ -27,6 +27,13 @@ function defineNation(sequelize, DataTypes) {
 
   var settings = {
     tableName: 'nations',
+    instanceMethods: {
+      hasCitizen: function(user) {
+        return this.getCitizenships({where: {userId: user.id}}).then(function(res) {
+          return res.length > 0
+        })
+      }
+    },
     classMethods: {
       associate: function(models) {
         this.hasMany(models.Citizenship, {

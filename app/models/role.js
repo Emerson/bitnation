@@ -21,6 +21,11 @@ function defineRole(sequelize, DataTypes) {
   var settings = {
     tableName: 'roles',
     classMethods: {
+      permissions: {
+        nation: [],
+        invitation: [],
+        requests: []
+      },
       associate: function(models) {
         this.belongsTo(models.Nation, {
           foreignKey: 'nationId'

@@ -1,10 +1,12 @@
 var helper = require(__dirname + '/../test-helper')
 var Models = require(__dirname + '/../../app/models/index')
 var fixturesSetup = require(__dirname + '/../fixtures/setup')
+var Promise = require("bluebird")
 
 describe('Model - Nation', function() {
 
   var Nation = Models.Nation
+  var User = Models.User
 
   before(function(done) {
     fixturesSetup.resetFixtures([
@@ -68,6 +70,27 @@ describe('Model - Nation', function() {
       nation.getCitizenships().then(function(citizenships) {
         assert.equal(citizenships[0].userId, 4)
         assert.equal(citizenships[0].nationId, 4)
+        done()
+      })
+    })
+  })
+
+  it('hasCitizen should check if a nation has a citizen', function(done) {
+    Promise.props({
+      nation: Nation.findOne({name: 'default'}),
+      user: User.findOne({name: 'default'})
+    }).then(function(res) {
+      res.nation.hasCitizen(res.user).then(function(found) {
+        assert(found)
+        done()
+      })
+    })
+  })
+
+  it('hasCitizen should return false', function(done) {
+    Nation.findOne({name: 'default'}).then(function(nation) {
+      nation.hasCitizen({id: 2000}).then(function(found) {
+        assert(!found)
         done()
       })
     })
